@@ -1,5 +1,5 @@
 module.exports = {
-   branches: "main",
+   branches: "dev",
    repositoryUrl: "https://github.com/magamudi/actiontest2.git",
    plugins: [
      '@semantic-release/commit-analyzer',
