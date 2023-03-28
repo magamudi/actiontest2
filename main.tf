@@ -1,7 +1,9 @@
-provider "aws" {
-  region = "us-west-2"
-}
 
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-1"
+}
 resource "aws_vpc" "actions" {
    cidr_block = "10.0.0.0/24"
 
@@ -14,17 +16,18 @@ resource "aws_vpc" "actions" {
 }
 
 terraform {
-  required_version = "~> 1.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0" # Optional but recommended in production
+      version = "~> 4.0"
     }
   }
-  backend "s3" {
-    bucket = "myotherclass25bucket"
+
+ backend "s3" {
+    bucket = "class-magnus-amudi"
     key = "prod/terraform.tfstate"
-    region = "us-west-2"
+    region = "us-east-1"
   }
 }
+
 
